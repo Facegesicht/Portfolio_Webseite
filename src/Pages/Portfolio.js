@@ -25,7 +25,7 @@ function poop(){
 }
 
 async function getData() {
-  const url = "GET https://sheets.googleapis.com/v4/spreadsheets/1AjYoPZ7dm-40oHbyzfXHGjReDri6MtdTEAP22NJRKs0/values/Sheet1?key=AIzaSyAcR8Q7zW2-40lOEChZipZ-xHr-U2u-RKc";
+  const url = "GET https://sheets.googleapis.com/v4/spreadsheets/1AjYoPZ7dm-40oHbyzfXHGjReDri6MtdTEAP22NJRKs0/values/Sheet1?key=";
   try {
     const response = await fetch(url);
     if (!response.ok) {
