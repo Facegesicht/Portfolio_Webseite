@@ -7,9 +7,13 @@
   pointer-events: none;
 }
 
+.Picture-timothy{
+  height: 40vmin;
+}
+
 .App-main {
   background-color: #373c46;
-  height: 80vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;

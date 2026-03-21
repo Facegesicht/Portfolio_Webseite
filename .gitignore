@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# key
+api-key.json
+
 # production
 /build
 

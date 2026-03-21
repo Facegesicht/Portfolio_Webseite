@@ -10,6 +10,7 @@ function Header() {
 
       <nav className="nav">
         <Link className='App-link' to="/">Home</Link>
+        <Link className='App-link' to="/Portfolio">Portfolio</Link>
         <Link className='App-link' to="/About">About</Link>
       </nav>
     </header>
