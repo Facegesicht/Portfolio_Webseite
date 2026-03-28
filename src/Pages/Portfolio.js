@@ -1,31 +1,31 @@
 import '../App.css';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import apiKey from '../api-key.json';
 
 function Portfolio() {
-      // Function to run once
-  const runOnce = () => {
-    console.log("This runs only once when the component opens!");
-    // Add any logic you need here
-  };
-
+  const [output, setOutput] = useState(null);
   // useEffect with empty dependency array runs once
   useEffect(() => {
-    runOnce();
+    async function fetchData(){
+      const data = await getData();
+      setOutput(data);
+    }
+    fetchData();
   }, []); // empty array ensures it runs only once
   return (
     <div className="App-main">
       <h1>Diese Seite ist über CMS implementiert prototype mmh cool spaß ich habe spaß</h1>
-      {poop()}
+      <h2>{output ? JSON.stringify(output) : "Loading .."}</h2>
     </div>
   );
 }
 
-function poop(){
-    console.log("hallo")
-}
+const API_KEY = apiKey["apisheets"];
+const SPREADSHEET_ID = "1AjYoPZ7dm-40oHbyzfXHGjReDri6MtdTEAP22NJRKs0";
+const RANGE = "Tabellenblatt1";
 
 async function getData() {
-  const url = "GET https://sheets.googleapis.com/v4/spreadsheets/1AjYoPZ7dm-40oHbyzfXHGjReDri6MtdTEAP22NJRKs0/values/Sheet1?key=";
+  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -34,9 +34,11 @@ async function getData() {
 
     const result = await response.json();
     console.log(result);
+    return result;
   } catch (error) {
     console.error(error.message);
   }
+  return null;
 }
 
 export default Portfolio;
