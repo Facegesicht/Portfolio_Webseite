@@ -16,11 +16,22 @@ function Portfolio() {
   return (
     <div className="App-main">
       <h1>Diese Seite ist über CMS implementiert prototype mmh cool spaß ich habe spaß</h1>
-      <h2>{output ? JSON.stringify(output) : "Loading .."}</h2>
+      {output ? (
+      <ul>
+        {output.map((item, index) => (
+          <li key={index}>
+            <h3>{item[0]}</h3>
+            <p>{item[1]}</p>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p>Loading...</p>
+    )}
+
     </div>
   );
 }
-
 
 
 export default Portfolio;
