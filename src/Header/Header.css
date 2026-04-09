@@ -1,14 +1,53 @@
-.App-header {
+/*.App-header {
   background-color: #282c34;
-  min-height: 20vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+}*/
 
 .App-link {
   color: #61dafb;
+}
+
+.App-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 200px;
+  padding: 3px 6px;
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  background-image: url("../Ressources/headerGaming.jpg");
+  background-size: cover;
+  /*background: rgba(20, 20, 20, 0.8);*/
+  backdrop-filter: blur(10px);
+
+  transition: all 0.3s ease;
+}
+
+/* Smaller state */
+.App-header.shrink {
+  justify-content: space-between;
+  padding: 1px 4px;
+  min-height: 50px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+/* Logo scaling */
+.logo h1 {
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+
+.App-header.shrink .logo h1 {
+  font-size: 1.5rem;
 }

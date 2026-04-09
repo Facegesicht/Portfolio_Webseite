@@ -17,7 +17,7 @@ function Portfolio() {
     <div className="App-main">
       <h1>Diese Seite ist über CMS implementiert prototype mmh cool spaß ich habe spaß</h1>
       {output ? (
-      <ul>
+      <ul style={{ listStyle: "none", padding: 0 }}>
         {output.map((item, index) => (
           <li key={index}>
             <h3>{item[0]}</h3>
